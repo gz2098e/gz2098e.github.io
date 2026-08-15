@@ -1,0 +1,107 @@
+# ==============================================================================
+# GOOUTO.com — Hugo 全站统一配置文件
+# 修改以下参数即可全站同步，无需逐页修改
+# ==============================================================================
+
+baseURL = "https://goouto.com/"
+languageCode = "en-us"
+title = "GOOUTO Outdoor & Party Wholesale | Yiwu B2B Supplier"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# 禁用 Hugo 默认分类系统（使用自定义 content/categories/ 方式）
+disableKinds = ["taxonomy", "term", "RSS"]
+
+# 构建输出目录
+[build]
+  writeStats = true
+
+# 菜单配置（主导航栏）
+[menus]
+  [[menus.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Products"
+    url = "/products/"
+    weight = 2
+  [[menus.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 3
+  [[menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menus.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+# Sitemap 配置
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.7
+  filename = "sitemap.xml"
+
+# ==============================================================================
+# 全站参数 — 公司信息、联系方式（核心统一管理区域）
+# ==============================================================================
+[params]
+  # --- 公司基本信息 ---
+  companyName = "GOOUTO Outdoor & Party Wholesale"
+  companyShortName = "GOOUTO"
+  companyFullName = "GOOUTO (Yiwu Gongbei Trading Co., Ltd.)"
+  brandTagline = "B2B Outdoor & Party Supplies Showroom from Yiwu China"
+  brandSubtitle = "Direct from Yiwu — Factory Prices, Flexible MOQ"
+  brandDescription = "GOOUTO is a B2B wholesale showroom for outdoor gear, sports equipment, outdoor toys, and holiday party supplies from Yiwu China. Factory direct prices, flexible MOQ, global shipping."
+
+  # --- 联系方式 ---
+  phone = "+8618006891977"
+  whatsapp = "+8618006891977"
+  whatsappLink = "https://wa.me/8618006891977"
+  email = "mike@goouto.com"
+  wechat = "+8618006891977"
+
+  # --- 地址 ---
+  address = "Yiwu International Trade City, Zhejiang, China"
+  addressPostal = "322000"
+  workHours = "Monday-Saturday, 9:00-18:00 (GMT+8)"
+
+  # --- 域名 ---
+  domain = "goouto.com"
+  siteURL = "https://goouto.com"
+  imgDomain = "https://img.goouto.com"
+
+  # --- SEO 默认配置 ---
+  defaultDescription = "GOOUTO is a B2B wholesale showroom for outdoor gear, sports equipment, outdoor toys, and holiday party supplies from Yiwu China. Factory direct prices, flexible MOQ, global shipping."
+  twitterHandle = "@goouto"
+
+  # --- 统计追踪 ---
+  googleAnalytics = ""
+
+  # --- 版权 ---
+  copyright = "© 2026 GOOUTO Outdoor & Party Wholesale | Yiwu B2B Supplier"
+
+  # --- 社交媒体（如有）---
+  socialFacebook = ""
+  socialInstagram = ""
+  socialYouTube = ""
+  socialLinkedIn = ""
+
+  # --- 页面数量统计（用于首页展示）---
+  productCount = "1000+"
+  categoryCount = "19"
+  customerCountries = "80+"
+
+# ==============================================================================
+# 标记参数（Hugo Markup 配置）
+# ==============================================================================
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
