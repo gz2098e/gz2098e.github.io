@@ -1,0 +1,24 @@
+<!-- ================================================================== -->
+<!-- Product Card — 产品卡片组件（复用于列表页/首页/推荐区）              -->
+<!-- ================================================================== -->
+<article class="product-card">
+  <a href="{{ .Permalink }}" class="product-card-link">
+    <div class="product-card-image">
+      {{ with .Params.images }}
+      <img src="{{ index . 0 }}" alt="{{ $.Title }}" loading="lazy">
+      {{ else }}
+      <div class="product-card-noimg">No Image</div>
+      {{ end }}
+    </div>
+    <div class="product-card-body">
+      <p class="product-card-sku">SKU: {{ .Params.sku | default "N/A" }}</p>
+      <h3 class="product-card-title">{{ .Title }}</h3>
+      <p class="product-card-desc">{{ .Params.description | default "" | truncate 80 }}</p>
+      <div class="product-card-tags">
+        {{ with .Params.trade.moq }}<span class="badge">MOQ {{ . }} pcs</span>{{ end }}
+        {{ with .Params.trade.leadTime }}<span class="badge badge-orange">{{ . }}</span>{{ end }}
+        {{ if .Params.trade.sampleAvailable }}<span class="badge badge-green">Sample available</span>{{ end }}
+      </div>
+    </div>
+  </a>
+</article>

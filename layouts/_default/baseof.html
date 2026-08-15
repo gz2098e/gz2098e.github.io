@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Params.companyName }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Params.companyName }}">
+    {{ if eq .Type "products" }}{{ if not .Params._isIndex }}
+    <meta property="og:type" content="product">
+    {{ with .Params.images }}<meta property="og:image" content="{{ index . 0 }}">{{ end }}
+    {{ else }}
+    <meta property="og:type" content="website">
+    {{ end }}{{ else }}
+    <meta property="og:type" content="website">
+    {{ end }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    {{ if eq .Type "products" }}{{ if not .Params._isIndex }}
+    {{ $productSchema := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "description" (.Params.description | default .Site.Params.defaultDescription) "sku" (.Params.sku | default "") "brand" (dict "@type" "Brand" "name" .Site.Params.companyShortName) "manufacturer" (dict "@type" "Organization" "name" .Site.Params.companyFullName "address" (dict "@type" "PostalAddress" "addressLocality" "Yiwu" "addressRegion" "Zhejiang" "postalCode" "322000" "addressCountry" "CN")) }}
+    {{ $productJSON := $productSchema | jsonify }}
+    <script type="application/ld+json">{{ printf "%s" $productJSON | safeJS }}</script>
+    {{ end }}{{ end }}
+
+    {{ if .IsHome }}
+    {{ $websiteSchema := dict "@context" "https://schema.org" "@type" "WebSite" "url" .Site.Params.siteURL "name" .Site.Params.companyName "description" .Site.Params.defaultDescription }}
+    {{ $websiteJSON := $websiteSchema | jsonify }}
+    <script type="application/ld+json">{{ printf "%s" $websiteJSON | safeJS }}</script>
+    {{ $orgSchema := dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Params.companyFullName "url" .Site.Params.siteURL "email" .Site.Params.email "telephone" .Site.Params.phone }}
+    {{ $orgJSON := $orgSchema | jsonify }}
+    <script type="application/ld+json">{{ printf "%s" $orgJSON | safeJS }}</script>
+    {{ end }}
+
+    {{ with .Site.Params.googleAnalytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ . }}');</script>
+    {{ end }}
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="{{ .Site.Params.whatsappLink }}" class="topbar-item" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
+          <a href="mailto:{{ .Site.Params.email }}" class="topbar-item">Email: {{ .Site.Params.email }}</a>
+          <span class="topbar-item">Tel: {{ .Site.Params.phone }}</span>
+        </div>
+        <a href="{{ .Site.Params.whatsappLink }}" class="topbar-cta" target="_blank" rel="noopener">Get Quote on WhatsApp →</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="/"><span class="brand-name">{{ .Site.Params.companyShortName }}</span><span class="brand-sub">{{ .Site.Params.brandSubtitle }}</span></a>
+        </div>
+        <nav class="main-nav desktop-nav">
+          {{ range .Site.Menus.main }}<a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>{{ end }}
+          <div class="nav-dropdown">
+            <a href="/categories/" class="nav-link">Categories ▾</a>
+            <div class="dropdown-menu">
+              {{ range .Site.Data.categories.mainCategories }}
+              <div class="dropdown-group">
+                <div class="dropdown-group-title">{{ .icon }} {{ .name }}</div>
+                {{ range .subcategories }}<a href="/categories/{{ .slug }}/" class="dropdown-link">{{ .name }}</a>{{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          <a href="{{ .Site.Params.whatsappLink }}" class="nav-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </nav>
+        <details class="mobile-menu">
+          <summary class="mobile-menu-toggle"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></summary>
+          <div class="mobile-nav-panel">
+            {{ range .Site.Menus.main }}<a href="{{ .URL }}" class="mobile-nav-link">{{ .Name }}</a>{{ end }}
+            <a href="/categories/" class="mobile-nav-link">Categories</a>
+            <div class="mobile-categories">
+              {{ range .Site.Data.categories.mainCategories }}
+              <div class="mobile-cat-group">
+                <div class="mobile-cat-title">{{ .icon }} {{ .name }}</div>
+                {{ range .subcategories }}<a href="/categories/{{ .slug }}/" class="mobile-nav-sublink">{{ .name }}</a>{{ end }}
+              </div>
+              {{ end }}
+            </div>
+            <a href="{{ .Site.Params.whatsappLink }}" class="mobile-nav-cta" target="_blank" rel="noopener">💬 WhatsApp Inquiry</a>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>{{ .Site.Params.companyName }}</h3>
+          <p class="footer-desc">{{ .Site.Params.brandTagline }}</p>
+          <p class="footer-address">📍 {{ .Site.Params.address }}</p>
+        </div>
+        <div class="footer-col">
+          <h3>Categories</h3>
+          {{ range .Site.Data.categories.mainCategories }}
+          <div class="footer-cat-group">
+            {{ range first 2 .subcategories }}<a href="/categories/{{ .slug }}/" class="footer-link">{{ .name }}</a>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <a href="/products/" class="footer-link">All Products</a>
+          <a href="/services/" class="footer-link">Services</a>
+          <a href="/about/" class="footer-link">About Us</a>
+          <a href="/contact/" class="footer-link">Contact</a>
+          <a href="/guides/" class="footer-link">Buying Guides</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="{{ .Site.Params.whatsappLink }}" class="footer-link" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
+          <a href="mailto:{{ .Site.Params.email }}" class="footer-link">Email: {{ .Site.Params.email }}</a>
+          <a href="tel:{{ .Site.Params.phone }}" class="footer-link">Tel: {{ .Site.Params.phone }}</a>
+          <p class="footer-link footer-hours">{{ .Site.Params.workHours }}</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container"><p>{{ .Site.Params.copyright }}</p></div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

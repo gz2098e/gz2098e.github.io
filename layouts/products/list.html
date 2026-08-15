@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+
+<div class="container">
+  <div class="page-header-section">
+    <h1>{{ .Title | default "Wholesale Products" }}</h1>
+    <p class="page-description">{{ .Params.description | default "Browse our complete catalog of outdoor gear, sports equipment, outdoor toys and holiday party supplies for B2B wholesale." }}</p>
+  </div>
+
+  <!-- Category Filter -->
+  <div class="category-filter">
+    <a href="/products/" class="filter-chip {{ if .IsSection }}active{{ end }}">All Products</a>
+    {{ range .Site.Data.categories.mainCategories }}
+    {{ range .subcategories }}
+    <a href="/categories/{{ .slug }}/" class="filter-chip">{{ .name }}</a>
+    {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- Product Grid -->
+  <div class="product-grid">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "products") 24 }}
+    {{ range $paginator.Pages }}
+    {{ partial "product-card.html" . }}
+    {{ end }}
+  </div>
+
+  <!-- Pagination -->
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="page-link">← Previous</a>
+    {{ end }}
+    <span class="page-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="page-link">Next →</a>
+    {{ end }}
+  </nav>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,240 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+
+<article class="product-detail" itemscope itemtype="https://schema.org/Product">
+  <div class="container">
+
+    <!-- 3. Product Images -->
+    <div class="product-images">
+      {{ with .Params.images }}
+      <div class="product-main-image">
+        <img src="{{ index . 0 }}" alt="{{ $.Title }}" itemprop="image">
+      </div>
+      {{ if gt (len .) 1 }}
+      <div class="product-thumbs">
+        {{ range . }}
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" class="thumb">
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ else }}
+      <div class="product-no-image">No image available</div>
+      {{ end }}
+    </div>
+
+    <!-- 4. Product Title H1 + SKU + Short Description -->
+    <div class="product-info">
+      <p class="product-sku" itemprop="sku">SKU: {{ .Params.sku | default "N/A" }}</p>
+      <h1 class="product-title" itemprop="name">{{ .Title }}</h1>
+      <p class="product-short-desc" itemprop="description">{{ .Params.description | default .Summary }}</p>
+
+      <!-- 5. Key Info Badges -->
+      <div class="product-badges">
+        {{ with .Params.trade.moq }}<span class="badge badge-lg">MOQ {{ . }} pcs</span>{{ end }}
+        {{ with .Params.trade.leadTime }}<span class="badge badge-lg badge-orange">{{ . }}</span>{{ end }}
+        {{ if .Params.trade.sampleAvailable }}<span class="badge badge-lg badge-green">Sample available</span>{{ end }}
+        {{ if .Params.trade.mixedOrder }}<span class="badge badge-lg badge-blue">Mixed order supported</span>{{ end }}
+      </div>
+
+      <!-- 6. Quick Specs Table -->
+      {{ with .Params.specs }}
+      <div class="quick-specs">
+        <h3>Quick Specs</h3>
+        <table class="spec-table">
+          {{ with $.Params.chineseName }}
+          <tr><th>Chinese Name</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .material }}
+          <tr><th>Material</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .colors }}
+          <tr><th>Colors</th><td>{{ delimit . ", " }}</td></tr>
+          {{ end }}
+          {{ with .size }}
+          <tr><th>Size</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .dimensions }}
+          <tr><th>Dimensions</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .weight }}
+          <tr><th>Weight</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .capacity }}
+          <tr><th>Capacity</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .waterproofRating }}
+          <tr><th>Waterproof Rating</th><td>{{ . }}</td></tr>
+          {{ end }}
+          {{ with .certifications }}
+          <tr><th>Certifications</th><td>{{ delimit . ", " }}</td></tr>
+          {{ end }}
+        </table>
+      </div>
+      {{ end }}
+
+      <!-- Trade Specs -->
+      {{ with .Params.trade }}
+      <div class="quick-specs">
+        <table class="spec-table">
+          <tr><th>MOQ</th><td>{{ .moq }} {{ .moqUnit | default "pcs" }}</td></tr>
+          {{ with .referencePrice }}<tr><th>Reference Price</th><td>{{ . }} {{ $.Params.trade.priceCurrency | default "USD" }}</td></tr>{{ end }}
+          {{ with .leadTime }}<tr><th>Lead Time</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with .sampleFee }}<tr><th>Sample Fee</th><td>{{ . }}</td></tr>{{ end }}
+          {{ with .customization }}<tr><th>Customization</th><td>{{ . }}</td></tr>{{ end }}
+        </table>
+      </div>
+      {{ end }}
+
+      <!-- 7. Inquiry CTA Buttons -->
+      {{ partial "inquiry-cta.html" . }}
+    </div>
+  </div>
+
+  <!-- 8. Key Selling Points -->
+  {{ with .Params.sellingPoints }}
+  <div class="container">
+    <section class="product-section">
+      <h2>Key Selling Points</h2>
+      <ul class="selling-points-list">
+        {{ range . }}
+        <li>{{ . | safeHTML }}</li>
+        {{ end }}
+      </ul>
+    </section>
+  </div>
+  {{ end }}
+
+  <!-- 9. Product Description -->
+  {{ with .Params.productDescription }}
+  <div class="container">
+    <section class="product-section">
+      <h2>Product Description</h2>
+      <div class="product-description">
+        {{ . | safeHTML }}
+      </div>
+    </section>
+  </div>
+  {{ end }}
+
+  <!-- 10. Wholesale Specifications -->
+  <div class="container">
+    <section class="product-section">
+      <h2>Wholesale Specifications</h2>
+      <div class="specs-grid">
+
+        <!-- Product Details -->
+        {{ with .Params.specs }}
+        <div class="spec-block">
+          <h3>Product Details</h3>
+          <table class="spec-table">
+            {{ with $.Params.chineseName }}<tr><th>Chinese Name</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .material }}<tr><th>Material</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .colors }}<tr><th>Colors</th><td>{{ delimit . ", " }}</td></tr>{{ end }}
+            {{ with .size }}<tr><th>Size</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .dimensions }}<tr><th>Dimensions</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .weight }}<tr><th>Weight</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .capacity }}<tr><th>Capacity</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .waterproofRating }}<tr><th>Waterproof Rating</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .setupTime }}<tr><th>Setup Time</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .certifications }}<tr><th>Certifications</th><td>{{ delimit . ", " }}</td></tr>{{ end }}
+          </table>
+        </div>
+        {{ end }}
+
+        <!-- Packing & Carton -->
+        {{ with .Params.packing }}
+        <div class="spec-block">
+          <h3>Packing &amp; Carton</h3>
+          <table class="spec-table">
+            {{ with .packageType }}<tr><th>Package Type</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .cartonQty }}<tr><th>Carton Qty</th><td>{{ . }} pcs/carton</td></tr>{{ end }}
+            {{ with .cartonSize }}<tr><th>Carton Size</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .grossWeight }}<tr><th>Gross Weight</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .netWeight }}<tr><th>Net Weight</th><td>{{ . }}</td></tr>{{ end }}
+          </table>
+        </div>
+        {{ end }}
+
+        <!-- Trade Terms -->
+        {{ with .Params.trade }}
+        <div class="spec-block">
+          <h3>Trade Terms</h3>
+          <table class="spec-table">
+            <tr><th>MOQ</th><td>{{ .moq }} {{ .moqUnit | default "pcs" }}</td></tr>
+            {{ with .leadTime }}<tr><th>Lead Time</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .sampleAvailable }}<tr><th>Sample Available</th><td>{{ if . }}Yes{{ else }}No{{ end }}</td></tr>{{ end }}
+            {{ with .sampleFee }}<tr><th>Sample Fee</th><td>{{ . }}</td></tr>{{ end }}
+            {{ with .mixedOrder }}<tr><th>Mixed Order</th><td>{{ if . }}Yes{{ else }}No{{ end }}</td></tr>{{ end }}
+            {{ with .referencePrice }}<tr><th>Reference Price</th><td>{{ . }} {{ $.Params.trade.priceCurrency | default "USD" }}</td></tr>{{ end }}
+            {{ with .customization }}<tr><th>Customization</th><td>{{ . }}</td></tr>{{ end }}
+          </table>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <!-- 11. Applications & Use Cases -->
+  {{ with .Params.applications }}
+  <div class="container">
+    <section class="product-section">
+      <h2>Applications &amp; Use Cases</h2>
+      <div class="applications-grid">
+        {{ with .useCases }}
+        <div class="app-block">
+          <h3>Use Cases</h3>
+          <ul class="use-case-list">
+            {{ range . }}
+            <li>{{ . | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        {{ with .suitableBuyers }}
+        <div class="app-block">
+          <h3>Suitable Buyers</h3>
+          <ul class="buyer-list">
+            {{ range . }}
+            <li>{{ . | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        {{ with .relatedSearchTerms }}
+        <div class="app-block">
+          <h3>Related Search Terms</h3>
+          <div class="search-terms">
+            {{ range . }}
+            <span class="search-term-tag">{{ . | safeHTML }}</span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+  {{ end }}
+
+  <!-- 13. FAQ -->
+  <div class="container">
+    {{ partial "faq-section.html" . }}
+  </div>
+
+  <!-- 14. Send Inquiry -->
+  <div class="container">
+    <section class="send-inquiry">
+      <h2>Send an Inquiry</h2>
+      <p>Interested in this product? Contact us now for pricing, samples and bulk order details.</p>
+      {{ partial "inquiry-cta.html" . }}
+    </section>
+  </div>
+
+  <!-- 15. Related Products -->
+  <div class="container">
+    {{ partial "related-products.html" . }}
+  </div>
+
+</article>
+{{ end }}

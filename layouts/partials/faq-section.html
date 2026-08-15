@@ -1,0 +1,19 @@
+<!-- ================================================================== -->
+<!-- FAQ Section — 常见问题折叠面板组件                                   -->
+<!-- 从产品 Front Matter 的 faqs 字段渲染                                -->
+<!-- ================================================================== -->
+{{ with .Params.faqs }}
+<section class="product-faq">
+  <h2>Wholesale FAQ</h2>
+  <div class="faq-list">
+    {{ range . }}
+    <details class="faq-item">
+      <summary class="faq-question">{{ .question }}</summary>
+      <div class="faq-answer">
+        <p>{{ .answer }}</p>
+      </div>
+    </details>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,62 @@
+<!-- ================================================================== -->
+<!-- Footer — 公共页脚（公共组件，从 config.toml + data/categories 注入）-->
+<!-- 所有公司信息均从 config.toml 动态注入，修改配置即全站同步            -->
+<!-- ================================================================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <!-- Column 1: Brand Info -->
+    <div class="footer-col">
+      <h3>{{ .Site.Params.companyName }}</h3>
+      <p class="footer-desc">{{ .Site.Params.brandTagline }}</p>
+      <p class="footer-address">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        {{ .Site.Params.address }}
+      </p>
+    </div>
+
+    <!-- Column 2: Categories -->
+    <div class="footer-col">
+      <h3>Categories</h3>
+      {{ range .Site.Data.categories.mainCategories }}
+      <div class="footer-cat-group">
+        {{ range first 2 .subcategories }}
+        <a href="/categories/{{ .slug }}/" class="footer-link">{{ .name }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Column 3: Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="/products/" class="footer-link">All Products</a>
+      <a href="/services/" class="footer-link">Services</a>
+      <a href="/about/" class="footer-link">About Us</a>
+      <a href="/contact/" class="footer-link">Contact</a>
+      <a href="/guides/" class="footer-link">Buying Guides</a>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <a href="{{ .Site.Params.whatsappLink }}" class="footer-link" target="_blank" rel="noopener">
+        WhatsApp: {{ .Site.Params.whatsapp }}
+      </a>
+      <a href="mailto:{{ .Site.Params.email }}" class="footer-link">
+        Email: {{ .Site.Params.email }}
+      </a>
+      <a href="tel:{{ .Site.Params.phone }}" class="footer-link">
+        Tel: {{ .Site.Params.phone }}
+      </a>
+      <p class="footer-link footer-hours">{{ .Site.Params.workHours }}</p>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>{{ .Site.Params.copyright }}</p>
+    </div>
+  </div>
+</footer>

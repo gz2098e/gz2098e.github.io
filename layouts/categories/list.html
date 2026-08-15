@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+
+<div class="container">
+  <div class="page-header-section">
+    <h1>{{ .Title | default "Product Categories" }}</h1>
+    <p class="page-description">{{ .Params.description | default "Browse products by category." }}</p>
+  </div>
+
+  <!-- Main Category Cards (on /categories/ index) -->
+  {{ if .IsSection }}
+  <div class="category-cards-grid">
+    {{ range .Site.Data.categories.mainCategories }}
+    <div class="category-card">
+      <div class="category-icon">{{ .icon }}</div>
+      <h2><a href="/categories/{{ (index .subcategories 0).slug }}/">{{ .name }}</a></h2>
+      <p>{{ .description }}</p>
+      <div class="category-subcats">
+        {{ range .subcategories }}
+        <a href="/categories/{{ .slug }}/" class="subcat-link">{{ .name }}</a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ else }}
+
+  <!-- Individual Category Page: show products in this category -->
+  {{ $currentSlug := .File.BaseFileName }}
+  {{ $products := where (where .Site.RegularPages "Type" "products") "Params.subcategory" $currentSlug }}
+
+  <div class="category-info">
+    <p class="category-count">{{ len $products }} products found</p>
+  </div>
+
+  <!-- Product Grid -->
+  {{ if gt (len $products) 0 }}
+  <div class="product-grid">
+    {{ range $products }}
+    {{ partial "product-card.html" . }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="no-products">
+    <p>Products are being added. Please check back soon or <a href="{{ .Site.Params.whatsappLink }}" target="_blank" rel="noopener">contact us</a> for availability.</p>
+  </div>
+  {{ end }}
+
+  <!-- Related Categories -->
+  <div class="related-categories">
+    <h3>Other Categories</h3>
+    <div class="category-filter">
+      {{ range .Site.Data.categories.mainCategories }}
+      {{ range .subcategories }}
+      <a href="/categories/{{ .slug }}/" class="filter-chip {{ if eq $.File.BaseFileName .slug }}active{{ end }}">{{ .name }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

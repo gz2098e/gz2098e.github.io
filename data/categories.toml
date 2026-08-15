@@ -1,0 +1,173 @@
+# ==============================================================================
+# GOOUTO.com 产品分类数据
+# 此文件定义所有产品分类，导航栏和页脚自动引用
+# ==============================================================================
+
+# 5大品类
+[[mainCategories]]
+  name = "Outdoor Gear"
+  slug = "outdoor-gear"
+  chineseName = "户外用品"
+  icon = "🏕️"
+  description = "Camping tents, sleeping bags, hiking poles, outdoor lighting and picnic supplies for wholesale buyers."
+
+  [[mainCategories.subcategories]]
+    name = "Camping Gear"
+    slug = "camping-gear"
+    chineseName = "露营装备"
+    description = "Tents, sleeping bags, camping mats, folding tables and chairs, camp lanterns."
+    keywords = "wholesale camping gear, bulk tents, camping equipment supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Hiking Equipment"
+    slug = "hiking-equipment"
+    chineseName = "登山徒步装备"
+    description = "Trekking poles, backpacks, knee pads, hydration bladders."
+    keywords = "hiking equipment wholesale, trekking poles bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Outdoor Lighting"
+    slug = "outdoor-lighting"
+    chineseName = "户外照明"
+    description = "Headlamps, camp lanterns, solar lights, flashlights."
+    keywords = "outdoor lighting supplier, headlamp wholesale"
+
+  [[mainCategories.subcategories]]
+    name = "Picnic Supplies"
+    slug = "picnic-supplies"
+    chineseName = "野餐用品"
+    description = "Picnic mats, insulated bags, picnic baskets, folding tableware."
+    keywords = "picnic supplies wholesale, picnic basket bulk"
+
+[[mainCategories]]
+  name = "Outdoor Sports"
+  slug = "outdoor-sports"
+  chineseName = "户外运动用品"
+  icon = "⚽"
+  description = "Water sports gear, cycling accessories, sports protection and fitness equipment for wholesale."
+
+  [[mainCategories.subcategories]]
+    name = "Water Sports"
+    slug = "water-sports"
+    chineseName = "水上运动用品"
+    description = "Snorkel masks, life jackets, waterproof bags, paddle boards."
+    keywords = "water sports equipment wholesale, snorkel gear bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Cycling Accessories"
+    slug = "cycling-accessories"
+    chineseName = "骑行配件"
+    description = "Phone mounts, bottle cages, tail lights, cycling gloves."
+    keywords = "cycling accessories bulk, bike lights wholesale"
+
+  [[mainCategories.subcategories]]
+    name = "Sports Protection"
+    slug = "sports-protection"
+    chineseName = "运动护具"
+    description = "Knee pads, wrist guards, sports bandages, helmets."
+    keywords = "sports protection gear wholesale, knee pads bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Fitness & Outdoor"
+    slug = "fitness-outdoor"
+    chineseName = "健身户外器材"
+    description = "Resistance bands, jump ropes, yoga mats, dumbbells."
+    keywords = "outdoor fitness equipment, resistance bands wholesale"
+
+[[mainCategories]]
+  name = "Outdoor Toys"
+  slug = "outdoor-toys"
+  chineseName = "户外玩具"
+  icon = "🎯"
+  description = "Water guns, flying discs, outdoor game sets and bubble toys for party and retail wholesale."
+
+  [[mainCategories.subcategories]]
+    name = "Water Guns & Balloons"
+    slug = "water-guns-balloons"
+    chineseName = "水枪/水球"
+    description = "Electric water guns, biodegradable water balloons, water blasters."
+    keywords = "water guns wholesale bulk, water balloons supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Flying Discs"
+    slug = "flying-discs"
+    chineseName = "飞盘/飞环"
+    description = "Sport flying discs, LED frisbees, flying rings, boomerangs."
+    keywords = "flying disc frisbee wholesale, LED frisbee bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Outdoor Games"
+    slug = "outdoor-games"
+    chineseName = "户外游戏套装"
+    description = "Ring toss games, cornhole, giant blocks, bean bag toss."
+    keywords = "outdoor party games wholesale, cornhole game bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Bubble Toys"
+    slug = "bubble-toys"
+    chineseName = "泡泡玩具"
+    description = "Bubble machines, giant bubble wands, bubble solution refills."
+    keywords = "bubble toys bulk supplier, bubble machine wholesale"
+
+[[mainCategories]]
+  name = "Holiday & Party Supplies"
+  slug = "holiday-party-supplies"
+  chineseName = "节日派对用品"
+  icon = "🎉"
+  description = "Christmas, Halloween, Easter and birthday party decorations for wholesale and retail."
+
+  [[mainCategories.subcategories]]
+    name = "Christmas Supplies"
+    slug = "christmas-supplies"
+    chineseName = "圣诞节用品"
+    description = "Christmas tree decorations, LED string lights, stockings, gift bags, table decor."
+    keywords = "wholesale christmas decorations bulk, christmas lights supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Halloween Supplies"
+    slug = "halloween-supplies"
+    chineseName = "万圣节用品"
+    description = "Pumpkin lanterns, Halloween decorations, masks, cosplay props, spooky items."
+    keywords = "halloween party supplies wholesale, halloween decorations bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Easter Supplies"
+    slug = "easter-supplies"
+    chineseName = "复活节用品"
+    description = "Easter eggs, bunny decorations, baskets, stickers, party sets."
+    keywords = "easter decorations wholesale, easter eggs bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Birthday Party"
+    slug = "birthday-party"
+    chineseName = "生日派对装饰"
+    description = "Balloons, banners, candles, tablecloths, party sets, cake decorations."
+    keywords = "birthday party decorations bulk, party supplies wholesale"
+
+[[mainCategories]]
+  name = "Related Categories"
+  slug = "related-categories"
+  chineseName = "其他相关类目"
+  icon = "🔥"
+  description = "BBQ accessories, garden supplies and beach products for wholesale buyers."
+
+  [[mainCategories.subcategories]]
+    name = "BBQ Supplies"
+    slug = "bbq-supplies"
+    chineseName = "烧烤用品"
+    description = "BBQ tongs, grill brushes, grill nets, portable grills."
+    keywords = "BBQ accessories wholesale, grill tools bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Garden Supplies"
+    slug = "garden-supplies"
+    chineseName = "花园用品"
+    description = "Gardening tools, flower pots, watering cans, garden decorations."
+    keywords = "garden supplies wholesale, gardening tools bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Beach Supplies"
+    slug = "beach-supplies"
+    chineseName = "沙滩用品"
+    description = "Beach chairs, sun umbrellas, sand toys, cooler boxes."
+    keywords = "beach supplies bulk, beach chair wholesale"

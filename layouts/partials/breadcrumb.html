@@ -1,0 +1,36 @@
+<!-- ================================================================== -->
+<!-- Breadcrumb — 面包屑导航（公共组件）                                  -->
+<!-- ================================================================== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    {{ if eq .Type "products" }}
+    {{ if .Params._isIndex }}
+    <span>Products</span>
+    {{ else }}
+    <a href="/products/">Products</a>
+    <span class="breadcrumb-sep">/</span>
+    {{ with .Params.subcategory }}
+    <a href="/categories/{{ . }}/">{{ . | humanize | title }}</a>
+    <span class="breadcrumb-sep">/</span>
+    {{ end }}
+    <span>{{ .Title }}</span>
+    {{ end }}
+    {{ else if eq .Type "categories" }}
+    <a href="/products/">Products</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>{{ .Title }}</span>
+    {{ else if eq .Type "guides" }}
+    {{ if .IsSection }}
+    <span>Buying Guides</span>
+    {{ else }}
+    <a href="/guides/">Buying Guides</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>{{ .Title }}</span>
+    {{ end }}
+    {{ else }}
+    <span>{{ .Title }}</span>
+    {{ end }}
+  </div>
+</nav>

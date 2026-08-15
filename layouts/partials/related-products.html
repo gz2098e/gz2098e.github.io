@@ -1,0 +1,35 @@
+<!-- ================================================================== -->
+<!-- Related Products — 同类目相关产品推荐组件                            -->
+<!-- 基于同一子分类(subcategory)推荐4个相关产品                           -->
+<!-- 如果同子分类不足4个，从同一大分类(category)补充                     -->
+<!-- ================================================================== -->
+{{ $currentPermalink := .Permalink }}
+{{ $subcategory := .Params.subcategory }}
+{{ $category := .Params.category }}
+
+<!-- 同子分类产品 -->
+{{ $related := where (where .Site.RegularPages "Type" "products") "Params.subcategory" $subcategory }}
+{{ $related := where $related "Permalink" "ne" $currentPermalink }}
+{{ $related := first 4 $related }}
+
+<!-- 如果不足4个，从同大分类补充 -->
+{{ if lt (len $related) 4 }}
+  {{ $need := sub 4 (len $related) }}
+  {{ $existingPermalinks := slice $currentPermalink }}
+  {{ range $related }}{{ $existingPermalinks = $existingPermalinks | append .Permalink }}{{ end }}
+  {{ $more := where (where .Site.RegularPages "Type" "products") "Params.category" $category }}
+  {{ $more := where $more "Permalink" "not in" $existingPermalinks }}
+  {{ $more := first $need $more }}
+  {{ $related = $related | append $more }}
+{{ end }}
+
+{{ if gt (len $related) 0 }}
+<section class="related-products">
+  <h2>Related Products</h2>
+  <div class="product-grid">
+    {{ range $related }}
+    {{ partial "product-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

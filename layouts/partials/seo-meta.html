@@ -1,0 +1,118 @@
+<!-- ================================================================== -->
+<!-- SEO Meta Tags — 由每个页面的 Front Matter 自动生成                  -->
+<!-- 页面标题 = 产品/页面标题 + 品牌后缀                                 -->
+<!-- ================================================================== -->
+
+<!-- Page Title: 与 H1 一致 + 品牌后缀 -->
+<title>{{ .Title }} | {{ .Site.Params.companyName }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Params.companyName }}">
+
+<!-- OG Type: 产品页用 product，其他页用 website -->
+{{ if eq .Type "products" }}
+<meta property="og:type" content="product">
+{{ with .Params.images }}
+<meta property="og:image" content="{{ index . 0 }}">
+{{ end }}
+{{ else }}
+<meta property="og:type" content="website">
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+{{ with .Site.Params.twitterHandle }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+
+<!-- ================================================================== -->
+<!-- JSON-LD Structured Data                                             -->
+<!-- ================================================================== -->
+
+<!-- Product Page Schema -->
+{{ if eq .Type "products" }}
+{{ if not .Params._isIndex }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | default .Site.Params.defaultDescription | jsonify }},
+  {{ with .Params.images }}"image": [{{ range $i, $img := . }}{{ if $i }},{{ end }}{{ $img | jsonify }}{{ end }}],{{ end }}
+  "sku": {{ .Params.sku | jsonify }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ .Site.Params.companyShortName | jsonify }}
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": {{ .Site.Params.companyFullName | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Yiwu",
+      "addressRegion": "Zhejiang",
+      "postalCode": "322000",
+      "addressCountry": "CN"
+    }
+  },
+  {{ with .Params.trade }}
+  "aggregateOffer": {
+    "@type": "AggregateOffer",
+    "priceCurrency": {{ .priceCurrency | default "USD" | jsonify }},
+    "offerCount": {{ .moq | jsonify }},
+    {{ with .referencePrice }}
+    "lowPrice": "{{ replaceRE "[$ ]" "" . | safeJS | truncate 10 "" }}",
+    {{ end }}
+    "offers": {
+      "@type": "Offer",
+      "businessFunction": "https://schema.org/Wholesale"
+    }
+  }
+  {{ end }}
+}
+</script>
+{{ end }}
+{{ end }}
+
+<!-- WebSite Schema (Homepage) -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": {{ .Site.Params.siteURL | jsonify }},
+  "name": {{ .Site.Params.companyName | jsonify }},
+  "description": {{ .Site.Params.defaultDescription | jsonify }}
+}
+</script>
+{{ end }}
+
+<!-- Organization Schema (All pages) -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ .Site.Params.companyFullName | jsonify }},
+  "url": {{ .Site.Params.siteURL | jsonify }},
+  "logo": {{ printf "%s/images/logo.png" .Site.Params.siteURL | jsonify }},
+  "email": {{ .Site.Params.email | jsonify }},
+  "telephone": {{ .Site.Params.phone | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Yiwu International Trade City",
+    "addressLocality": "Yiwu",
+    "addressRegion": "Zhejiang",
+    "postalCode": "322000",
+    "addressCountry": "CN"
+  }
+}
+</script>
+{{ end }}
