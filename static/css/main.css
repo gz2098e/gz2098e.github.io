@@ -467,14 +467,27 @@ img { max-width: 100%; height: auto; display: block; }
 /* ==============================================================================
    Product Detail Page
    ============================================================================== */
+/* ==============================================================================
+   Product Detail Layout (desktop: side-by-side, mobile: stacked)
+   ============================================================================== */
 .product-detail { padding: 1rem 0 3rem; }
+.product-detail > .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.product-images { margin-bottom: 0; }
+.product-info { margin-bottom: 0; }
 
-.product-images { margin-bottom: 2rem; }
 .product-main-image {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
+  position: sticky;
+  top: 80px;
+}
 }
 .product-main-image img { width: 100%; }
 .product-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -791,7 +804,30 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-bottom p { font-size: 0.8rem; color: #718096; }
 
 /* ==============================================================================
-   Responsive
+   Floating WhatsApp Button (mobile only)
+   ============================================================================== */
+.float-whatsapp {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--whatsapp);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.float-whatsapp:hover { background: var(--whatsapp-dark); color: #fff; text-decoration: none; transform: scale(1.08); }
+
+/* ==============================================================================
+   Responsive Media Queries
    ============================================================================== */
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -818,9 +854,41 @@ img { max-width: 100%; height: auto; display: block; }
   .product-title { font-size: 1.4rem; }
   .inquiry-cta { flex-direction: column; }
   .inquiry-cta .btn { width: 100%; justify-content: center; }
-  .topbar { font-size: 12px; }
-  .topbar-contact { gap: 0.75rem; }
+  .topbar { font-size: 12px; padding: 6px 0; }
+  .topbar-contact { gap: 0.75rem; flex-wrap: wrap; }
   .topbar-cta { display: none; }
+
+  /* Product detail: stack on mobile */
+  .product-detail > .container { grid-template-columns: 1fr; }
+  .product-main-image { position: static; }
+
+  /* Mobile menu panel */
+  .mobile-nav-panel { min-width: 250px; max-width: calc(100vw - 32px); }
+
+  /* Mobile nav touch targets */
+  .mobile-nav-link { padding: 14px 12px; font-size: 15px; }
+  .mobile-nav-sublink { padding: 10px 12px; font-size: 14px; }
+  .mobile-nav-cta { padding: 14px; }
+
+  /* Hero CTA buttons stack */
+  .hero-cta { flex-direction: column; gap: 0.75rem; }
+  .hero-cta .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* Brand on mobile */
+  .brand-name { font-size: 1.3rem; }
+  .brand-sub { display: none; }
+  .header-inner { padding: 10px 1rem; }
+
+  /* Breadcrumb scroll */
+  .breadcrumb { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+  .breadcrumb .container { overflow-x: auto; }
+
+  /* Spec table scroll */
+  .quick-specs, .spec-block { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .spec-table { min-width: 280px; }
+
+  /* Show floating WhatsApp */
+  .float-whatsapp { display: flex; }
 }
 
 @media (max-width: 480px) {
@@ -829,6 +897,25 @@ img { max-width: 100%; height: auto; display: block; }
   .product-title { font-size: 1.2rem; }
   .spec-table { font-size: 0.8rem; }
   .spec-table th, .spec-table td { padding: 6px 8px; }
+
+  /* Topbar: hide email on very small screens, keep WhatsApp + Tel */
+  .topbar-contact .topbar-item:nth-child(2) { display: none; }
+  .topbar-contact { gap: 0.5rem; }
+
+  /* Hero stats smaller */
+  .hero-stats { gap: 1rem; }
+  .stat-num { font-size: 1.3rem; }
+  .stat-label { font-size: 0.7rem; }
+
+  /* Section spacing tighter */
+  .section { padding: 1.5rem 0; }
+  .section-title { font-size: 1.2rem; }
+
+  /* Product thumbnails */
+  .product-thumbs .thumb { width: 60px; height: 60px; }
+
+  /* Footer bottom text */
+  .footer-bottom { font-size: 12px; }
 }
 
 /* Print */
