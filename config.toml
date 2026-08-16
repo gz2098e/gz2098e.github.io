@@ -64,8 +64,18 @@ disableKinds = ["taxonomy", "term", "RSS"]
   email = "mike@goouto.com"
   wechat = "+8618006891977"
 
+  phone2 = "+8618069916622"
+  whatsapp2 = ""
+  whatsappLink2 = ""
+  email2 = "mankatawang@gmail.com"
+  wechat2 = "+8618069916622"
+
+  chatwork = "PattyWang"
+  chatworkLink = "https://www.chatwork.com/PattyWang"
+
+
   # --- 地址 ---
-  address = "Yiwu International Trade City, Zhejiang, China"
+  address = "Building 3, Qianmaodian, Houzhai Street, Yiwu International Trade City, Zhejiang, China"
   addressPostal = "322000"
   workHours = "Monday-Saturday, 9:00-18:00 (GMT+8)"
 
