@@ -52,6 +52,7 @@
           <a href="{{ .Site.Params.whatsappLink }}" class="topbar-item" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
           <a href="mailto:{{ .Site.Params.email }}" class="topbar-item">Email: {{ .Site.Params.email }}</a>
           <span class="topbar-item">Tel: {{ .Site.Params.phone }}</span>
+            {{ with .Site.Params.chatwork }}<a href="{{ $.Site.Params.chatworkLink }}" class="topbar-item" target="_blank" rel="noopener">ChatWork: {{ . }}</a>{{ end }}
         </div>
         <a href="{{ .Site.Params.whatsappLink }}" class="topbar-cta" target="_blank" rel="noopener">Get Quote on WhatsApp →</a>
       </div>
