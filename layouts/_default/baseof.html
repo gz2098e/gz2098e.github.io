@@ -127,10 +127,14 @@
           <a href="/guides/" class="footer-link">Buying Guides</a>
         </div>
         <div class="footer-col">
-          <h3>Contact</h3>
+           <h3>Contact</h3>
           <a href="{{ .Site.Params.whatsappLink }}" class="footer-link" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
+          {{ with .Site.Params.whatsapp2 }}<a href="{{ $.Site.Params.whatsappLink2 }}" class="footer-link" target="_blank" rel="noopener">WhatsApp 2: {{ . }}</a>{{ end }}
           <a href="mailto:{{ .Site.Params.email }}" class="footer-link">Email: {{ .Site.Params.email }}</a>
+          {{ with .Site.Params.email2 }}<a href="mailto:{{ . }}" class="footer-link">Email 2: {{ . }}</a>{{ end }}
           <a href="tel:{{ .Site.Params.phone }}" class="footer-link">Tel: {{ .Site.Params.phone }}</a>
+          {{ with .Site.Params.phone2 }}<a href="tel:{{ . }}" class="footer-link">Tel 2: {{ . }}</a>{{ end }}
+          {{ with .Site.Params.chatwork }}<a href="{{ $.Site.Params.chatworkLink }}" class="footer-link" target="_blank" rel="noopener">ChatWork: {{ . }}</a>{{ end }}
           <p class="footer-link footer-hours">{{ .Site.Params.workHours }}</p>
         </div>
       </div>
