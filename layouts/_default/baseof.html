@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | {{ .Site.Params.companyName }}</title>
+    <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} | {{ .Site.Params.companyShortName }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <meta property="og:title" content="{{ .Title }}">
@@ -52,7 +52,7 @@
           <a href="{{ .Site.Params.whatsappLink }}" class="topbar-item" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
           <a href="mailto:{{ .Site.Params.email }}" class="topbar-item">Email: {{ .Site.Params.email }}</a>
           <span class="topbar-item">Tel: {{ .Site.Params.phone }}</span>
-            {{ with .Site.Params.chatwork }}<a href="{{ $.Site.Params.chatworkLink }}" class="topbar-item" target="_blank" rel="noopener">ChatWork: {{ . }}</a>{{ end }}
+          {{ with .Site.Params.chatwork }}<a href="{{ $.Site.Params.chatworkLink }}" class="topbar-item" target="_blank" rel="noopener">ChatWork: {{ . }}</a>{{ end }}
         </div>
         <a href="{{ .Site.Params.whatsappLink }}" class="topbar-cta" target="_blank" rel="noopener">Get Quote on WhatsApp →</a>
       </div>
@@ -71,7 +71,7 @@
             <div class="dropdown-menu">
               {{ range .Site.Data.categories.mainCategories }}
               <div class="dropdown-group">
-                <div class="dropdown-group-title">{{ .icon }} {{ .name }}</div>
+                <a href="/categories/{{ .slug }}/" class="dropdown-group-title">{{ .icon }} {{ .name }}</a>
                 {{ range .subcategories }}<a href="/categories/{{ .slug }}/" class="dropdown-link">{{ .name }}</a>{{ end }}
               </div>
               {{ end }}
@@ -87,7 +87,7 @@
             <div class="mobile-categories">
               {{ range .Site.Data.categories.mainCategories }}
               <div class="mobile-cat-group">
-                <div class="mobile-cat-title">{{ .icon }} {{ .name }}</div>
+                <a href="/categories/{{ .slug }}/" class="mobile-cat-title">{{ .icon }} {{ .name }}</a>
                 {{ range .subcategories }}<a href="/categories/{{ .slug }}/" class="mobile-nav-sublink">{{ .name }}</a>{{ end }}
               </div>
               {{ end }}
@@ -128,13 +128,11 @@
           <a href="/guides/" class="footer-link">Buying Guides</a>
         </div>
         <div class="footer-col">
-           <h3>Contact</h3>
+          <h3>Contact</h3>
           <a href="{{ .Site.Params.whatsappLink }}" class="footer-link" target="_blank" rel="noopener">WhatsApp: {{ .Site.Params.whatsapp }}</a>
           {{ with .Site.Params.whatsapp2 }}<a href="{{ $.Site.Params.whatsappLink2 }}" class="footer-link" target="_blank" rel="noopener">WhatsApp 2: {{ . }}</a>{{ end }}
           <a href="mailto:{{ .Site.Params.email }}" class="footer-link">Email: {{ .Site.Params.email }}</a>
-          {{ with .Site.Params.email2 }}<a href="mailto:{{ . }}" class="footer-link">Email 2: {{ . }}</a>{{ end }}
           <a href="tel:{{ .Site.Params.phone }}" class="footer-link">Tel: {{ .Site.Params.phone }}</a>
-          {{ with .Site.Params.phone2 }}<a href="tel:{{ . }}" class="footer-link">Tel 2: {{ . }}</a>{{ end }}
           {{ with .Site.Params.chatwork }}<a href="{{ $.Site.Params.chatworkLink }}" class="footer-link" target="_blank" rel="noopener">ChatWork: {{ . }}</a>{{ end }}
           <p class="footer-link footer-hours">{{ .Site.Params.workHours }}</p>
         </div>

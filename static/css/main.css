@@ -923,3 +923,11 @@ img { max-width: 100%; height: auto; display: block; }
   .topbar, .site-header, .breadcrumb, .site-footer, .inquiry-cta, .related-products { display: none; }
   body { font-size: 12px; }
 }
+
+/* ================================================================== */
+/* 大类落地页 / 导航大类标题链接                                          */
+/* ================================================================== */
+a.dropdown-group-title { display: block; text-decoration: none; }
+a.dropdown-group-title:hover { text-decoration: underline; }
+a.mobile-cat-title { display: block; text-decoration: none; margin: 8px 12px 4px; }
+a.mobile-cat-title:hover { color: var(--accent); text-decoration: none; }

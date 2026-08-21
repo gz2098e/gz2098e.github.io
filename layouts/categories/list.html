@@ -13,7 +13,7 @@
     {{ range .Site.Data.categories.mainCategories }}
     <div class="category-card">
       <div class="category-icon">{{ .icon }}</div>
-      <h2><a href="/categories/{{ (index .subcategories 0).slug }}/">{{ .name }}</a></h2>
+      <h2><a href="/categories/{{ .slug }}/">{{ .name }}</a></h2>
       <p>{{ .description }}</p>
       <div class="category-subcats">
         {{ range .subcategories }}
