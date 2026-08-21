@@ -7,13 +7,17 @@
     <p class="page-description">{{ .Params.description | default "Browse products by category." }}</p>
   </div>
 
-  <!-- Main Category Cards (on /categories/ index) -->
-  {{ if .IsSection }}
+  <!-- Branch A: this page is a main-category landing page (has mainCategory param) -->
+  {{ if .Params.mainCategory }}
+    {{ partial "main-category.html" . }}
+
+  <!-- Branch B: this is the /categories/ index page -->
+  {{ else if .IsSection }}
   <div class="category-cards-grid">
     {{ range .Site.Data.categories.mainCategories }}
     <div class="category-card">
       <div class="category-icon">{{ .icon }}</div>
-      <h2><a href="/categories/{{ (index .subcategories 0).slug }}/">{{ .name }}</a></h2>
+      <h2><a href="/categories/{{ .slug }}/">{{ .name }}</a></h2>
       <p>{{ .description }}</p>
       <div class="category-subcats">
         {{ range .subcategories }}
@@ -23,9 +27,9 @@
     </div>
     {{ end }}
   </div>
-  {{ else }}
 
-  <!-- Individual Category Page: show products in this category -->
+  <!-- Branch C: this is a regular subcategory leaf page -->
+  {{ else }}
   {{ $currentSlug := .File.BaseFileName }}
   {{ $products := where (where .Site.RegularPages "Type" "products") "Params.subcategory" $currentSlug }}
 
@@ -33,7 +37,6 @@
     <p class="category-count">{{ len $products }} products found</p>
   </div>
 
-  <!-- Product Grid -->
   {{ if gt (len $products) 0 }}
   <div class="product-grid">
     {{ range $products }}
@@ -46,7 +49,6 @@
   </div>
   {{ end }}
 
-  <!-- Related Categories -->
   <div class="related-categories">
     <h3>Other Categories</h3>
     <div class="category-filter">
