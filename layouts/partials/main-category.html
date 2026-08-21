@@ -1,0 +1,61 @@
+{{/*
+  Partial: main-category.html
+  Renders a main-category landing page content (used inside single.html
+  when a leaf page in content/categories/ carries a mainCategory param).
+  The <div class="container"> wrapper is already provided by single.html.
+*/}}
+
+{{ $slug := .Params.mainCategory }}
+{{ $mainCat := index (where .Site.Data.categories.mainCategories "slug" $slug) 0 }}
+{{ $products := where (where .Site.RegularPages "Type" "products") "Params.category" $slug }}
+
+<!-- 子分类卡片 -->
+<div class="category-cards-grid">
+  {{ if $mainCat }}
+    {{ range $mainCat.subcategories }}
+    <div class="category-card">
+      <h2><a href="/categories/{{ .slug }}/">{{ .name }}</a></h2>
+      <p>{{ .description }}</p>
+      <div class="category-subcats">
+        <a href="/categories/{{ .slug }}/" class="subcat-link">View Products →</a>
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+<!-- 产品总数 -->
+<div class="category-info">
+  <p class="category-count">{{ len $products }} products found{{ if $mainCat }} in {{ $mainCat.name }}{{ end }}</p>
+</div>
+
+<!-- 按子分类分组展示产品 -->
+{{ if and $mainCat (gt (len $products) 0) }}
+  {{ range $mainCat.subcategories }}
+    {{ $subProducts := where $products "Params.subcategory" .slug }}
+    {{ if gt (len $subProducts) 0 }}
+    <h2 class="section-title">{{ .name }} ({{ len $subProducts }})</h2>
+    <div class="product-grid">
+      {{ range $subProducts }}
+      {{ partial "product-card.html" . }}
+      {{ end }}
+    </div>
+    {{ end }}
+  {{ end }}
+{{ else if eq (len $products) 0 }}
+<div class="no-products">
+  <p>Products are being added. Please check back soon or <a href="{{ .Site.Params.whatsappLink }}" target="_blank" rel="noopener">contact us</a> for availability.</p>
+</div>
+{{ end }}
+
+<!-- 其他大类切换 -->
+{{ if $mainCat }}
+<div class="related-categories">
+  <h3>Other Main Categories</h3>
+  <div class="category-filter">
+    {{ range .Site.Data.categories.mainCategories }}
+    <a href="/categories/{{ .slug }}/" class="filter-chip {{ if eq $slug .slug }}active{{ end }}">{{ .icon }} {{ .name }}</a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
