@@ -1,4 +1,4 @@
-***
+---
 
 title: "CS-002 PVC PE Mixed Green Artificial Christmas Tree Wholesale"
 slug: "cs-002-pvc-pe-mixed-green-artificial-christmas-tree-wholesale"
@@ -116,5 +116,5 @@ faqs:
 * question: "Is the material fire-safe?"
   answer: "Yes, all PVC material is flame-retardant and meets CE and RoHS safety standards for commercial and residential use."
 
-***
+---
 
