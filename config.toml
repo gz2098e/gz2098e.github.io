@@ -89,7 +89,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   twitterHandle = "@goouto"
 
   # --- 统计追踪 ---
-  googleAnalytics = ""
+  googleAnalytics = "G-1NK3BEJ7JH"
 
   # --- 版权 ---
   copyright = "© 2026 GOOUTO Outdoor & Party Wholesale | Yiwu B2B Supplier"
