@@ -207,3 +207,10 @@
     chineseName = "宠物喂食用品"
     description = "Pet bowls, slow feeder bowls, automatic feeders, water dispensers, silicone mats."
     keywords = "pet feeding supplies wholesale, dog bowls bulk, pet feeder supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Pet Grooming Supplies"
+    slug = "pet-grooming-supplies"
+    chineseName = "宠物美容清洁用品"
+    description = "Pet grooming brushes, nail clippers, deshedding tools, pet shampoos, drying towels, grooming kits."
+    keywords = "pet grooming supplies wholesale, dog grooming brush bulk, pet grooming kit supplier"
