@@ -102,7 +102,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
   # --- 页面数量统计（用于首页展示）---
   productCount = "1000+"
-  categoryCount = "23"
+  categoryCount = "24"
   customerCountries = "80+"
 
 # ==============================================================================
