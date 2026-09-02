@@ -171,3 +171,39 @@
     chineseName = "沙滩用品"
     description = "Beach chairs, sun umbrellas, sand toys, cooler boxes."
     keywords = "beach supplies bulk, beach chair wholesale"
+
+
+  [[mainCategories]]
+  name = "Pet Supplies"
+  slug = "pet-supplies"
+  chineseName = "宠物用品"
+  icon = "🐾"
+  description = "Pet outdoor gear, pet toys, pet clothing and feeding supplies for wholesale buyers."
+
+  [[mainCategories.subcategories]]
+    name = "Pet Outdoor Gear"
+    slug = "pet-outdoor-gear"
+    chineseName = "宠物户外装备"
+    description = "Pet travel carriers, portable water bottles, dog leashes, pet camping tents, pet life vests."
+    keywords = "pet outdoor gear wholesale, dog travel carrier bulk, pet life vest supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Pet Toys"
+    slug = "pet-toys"
+    chineseName = "宠物玩具"
+    description = "Chew toys, fetch balls, interactive toys, cat wand toys, squeaky toys."
+    keywords = "pet toys wholesale bulk, dog chew toys supplier, cat toys bulk"
+
+  [[mainCategories.subcategories]]
+    name = "Pet Clothing & Accessories"
+    slug = "pet-clothing-accessories"
+    chineseName = "宠物服饰配件"
+    description = "Dog coats, raincoats, bandanas, pet collars, harnesses, pet boots."
+    keywords = "pet clothing wholesale, dog coats bulk, pet accessories supplier"
+
+  [[mainCategories.subcategories]]
+    name = "Pet Feeding Supplies"
+    slug = "pet-feeding-supplies"
+    chineseName = "宠物喂食用品"
+    description = "Pet bowls, slow feeder bowls, automatic feeders, water dispensers, silicone mats."
+    keywords = "pet feeding supplies wholesale, dog bowls bulk, pet feeder supplier"
