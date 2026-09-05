@@ -75,7 +75,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 
   # --- 地址 ---
-  address = "Building 3, Qianmaodian, Houzhai Street, Yiwu International Trade City, Zhejiang, China"
+  address = "Building 3, Qianmaodian, Houzhai Street, Yiwu City, Zhejiang Province, China"
   addressPostal = "322000"
   workHours = "Monday-Saturday, 9:00-18:00 (GMT+8)"
 
