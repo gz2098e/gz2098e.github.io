@@ -28,7 +28,7 @@ We respond to all inquiries within **2 business hours** during working hours (GM
   <div class="contact-card">
     <div class="contact-card-icon">📍</div>
     <h3>Address</h3>
-    <p>Yiwu International Trade City<br>Zhejiang, China 322000</p>
+    <p>（Yiwu Gongbei Trading Firm）Building 3, Qianmaodian New Village, Houzhai Street, Yiwu, Zhejiang, China  322000</p>
   </div>
 </div>
 
