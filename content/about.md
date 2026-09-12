@@ -69,5 +69,5 @@ Ready to start sourcing? Contact us today:
 - **WhatsApp**: +8618006891977
 - **Email**: mike@goouto.com
 - **Phone**: +8618006891977
-- **Address**: Yiwu International Trade City, Zhejiang, China 322000
+- **Address**: （Yiwu Gongbei Trading Firm） Unit 2, Building 3, Qianmaodian New Village, Houzhai Street, Yiwu City, Zhejiang Province, China 322000
 - **Working Hours**: Monday-Saturday, 9:00-18:00 (GMT+8)
