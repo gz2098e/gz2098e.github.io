@@ -52,7 +52,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # --- 公司基本信息 ---
   companyName = "GOOUTO Outdoor & Party Wholesale"
   companyShortName = "GOOUTO"
-  companyFullName = "GOOUTO (Yiwu Gongbei Trading Co., Ltd.)"
+  companyFullName = "GOOUTO (Yiwu Gongbei Trading Firm.)"
   brandTagline = "B2B Outdoor & Party Supplies Showroom from Yiwu China"
   brandSubtitle = "Direct from Yiwu — Factory Prices, Flexible MOQ"
   brandDescription = "GOOUTO is a B2B wholesale showroom for outdoor gear, sports equipment, outdoor toys, and holiday party supplies from Yiwu China. Factory direct prices, flexible MOQ, global shipping."
@@ -92,7 +92,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   googleAnalytics = "G-1NK3BEJ7JH"
 
   # --- 版权 ---
-  copyright = "© 2026 GOOUTO Outdoor & Party Wholesale | Yiwu B2B Supplier"
+  copyright = "© 2026 （GOOUTO) Yiwu Gongbei Trading Firm   Outdoor & Party Wholesale | Yiwu B2B Supplier"
 
   # --- 社交媒体（如有）---
   socialFacebook = ""
