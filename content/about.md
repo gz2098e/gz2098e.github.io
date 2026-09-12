@@ -5,7 +5,7 @@ description: "GOOUTO is a B2B wholesale showroom for outdoor gear, sports equipm
 
 ## Who We Are
 
-GOOUTO (Yiwu Gongbei Trading Co., Ltd.) is a B2B wholesale showroom based in Yiwu, China — the world's largest small commodity trading hub. We specialize in outdoor products, outdoor sports equipment, outdoor toys, and holiday party supplies, serving importers, distributors, Amazon sellers, supermarket buyers, and gift wholesalers worldwide.
+GOOUTO (Yiwu Gongbei Trading Firm.) is a B2B wholesale showroom based in Yiwu, China — the world's largest small commodity trading hub. We specialize in outdoor products, outdoor sports equipment, outdoor toys, and holiday party supplies, serving importers, distributors, Amazon sellers, supermarket buyers, and gift wholesalers worldwide.
 
 With over **1,000+ products** across **19 categories**, we offer factory-direct pricing, flexible MOQ, and comprehensive OEM/ODM services. Our mission is to make sourcing from China simple, transparent, and profitable for B2B buyers globally.
 
