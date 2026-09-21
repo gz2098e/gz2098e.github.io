@@ -10,7 +10,7 @@ subcategory: "bubble-toys"
 tags: ["character bubble gun", "Pikachu bubble gun", "bear bubble gun", "character bubble toy", "kids bubble blaster", "cartoon bubble gun", "character bubble maker", "wholesale character bubble gun"]
 
 images:
-  - "https://img.goouto.com/file/1789961666278_921-2.jpg"
+  - "https://img.goouto.com/file/1789963081051_921-2.jpg"
 
 specs:
   productType: "Character Theme Bubble Gun"

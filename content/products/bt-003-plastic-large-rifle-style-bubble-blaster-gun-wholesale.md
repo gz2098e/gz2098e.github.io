@@ -10,7 +10,7 @@ subcategory: "bubble-toys"
 tags: ["large bubble gun", "rifle bubble blaster", "bubble rifle gun", "big bubble blaster", "tactical bubble gun", "bubble cannon", "party bubble gun", "wholesale bubble blaster"]
 
 images:
-  - "https://img.goouto.com/file/1789961666278_921-2.jpg"
+  - "https://img.goouto.com/file/1789963081051_921-2.jpg"
 
 specs:
   productType: "Large Rifle-Style Bubble Blaster Gun"

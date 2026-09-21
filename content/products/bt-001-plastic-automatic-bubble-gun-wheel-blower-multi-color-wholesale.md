@@ -10,7 +10,7 @@ subcategory: "bubble-toys"
 tags: ["bubble gun", "automatic bubble gun", "bubble blaster", "bubble wheel gun", "kids bubble toy", "bubble maker gun", "battery bubble gun", "wholesale bubble gun"]
 
 images:
-  - "https://img.goouto.com/file/1789961666278_921-2.jpg"
+  - "https://img.goouto.com/file/1789963081051_921-2.jpg"
 
 specs:
   productType: "Automatic Bubble Gun with Wheel Blower"
