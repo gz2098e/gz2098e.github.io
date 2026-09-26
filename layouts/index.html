@@ -53,7 +53,11 @@
   <div class="container">
     <h2 class="section-title">Latest Products</h2>
     <div class="product-grid">
-      {{ $products := first 8 (where .Site.RegularPages "Type" "products") }}
+{{ $allProducts := where .Site.RegularPages "Type" "products" }}
+{{ $featured := where $allProducts "Params.featured" true }}
+{{ $products := first 8 (cond (gt (len $featured) 0) $featured (shuffle $allProducts)) }}
+
+      
       {{ range $products }}
       {{ partial "product-card.html" . }}
       {{ end }}
