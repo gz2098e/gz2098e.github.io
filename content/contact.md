@@ -18,7 +18,7 @@ We respond to all inquiries within **2 business hours** during working hours (GM
   <div class="contact-card">
     <div class="contact-card-icon">📧</div>
     <h3>Email</h3>
-    <p><a href="mailto:mike@goouto.com">mike@goouto.com</a></p>
+    <p><a href="mailto:okmikezhao@gmail.com">okmikezhao@gmail.com</a></p>
   </div>
   <div class="contact-card">
     <div class="contact-card-icon">📞</div>
