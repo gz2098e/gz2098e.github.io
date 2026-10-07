@@ -92,5 +92,5 @@ Every buyer is assigned a dedicated account manager who:
 Ready to source quality outdoor and party products from China? Contact us today:
 
 - **WhatsApp**: +8618006891977
-- **Email**: mike@goouto.com
+- **Email**: okmikezhao@gmail.com
 - **Response Time**: Within 2 business hours (GMT+8)
