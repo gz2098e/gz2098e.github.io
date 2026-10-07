@@ -67,7 +67,7 @@ With over **1,000+ products** across **19 categories**, we offer factory-direct 
 Ready to start sourcing? Contact us today:
 
 - **WhatsApp**: +8618006891977
-- **Email**: mike@goouto.com
+- **Email**: okmikezhao@gmail.com
 - **Phone**: +8618006891977
 - **Address**: （Yiwu Gongbei Trading Firm） Unit 2, Building 3, Qianmaodian New Village, Houzhai Street, Yiwu City, Zhejiang Province, China 322000
 - **Working Hours**: Monday-Saturday, 9:00-18:00 (GMT+8)
