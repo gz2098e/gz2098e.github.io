@@ -166,6 +166,14 @@
     keywords = "garden supplies wholesale, gardening tools bulk"
 
   [[mainCategories.subcategories]]
+    name = "Travel Accessories"
+    slug = "travel-accessories"
+    chineseName = "户外旅行装备配件"
+    description = "Travel neck pillows, sleep eye masks, travel organizers, luggage accessories, comfort gear for travel."
+    keywords = "travel accessories wholesale, neck pillow bulk, travel comfort gear"
+    
+
+  [[mainCategories.subcategories]]
     name = "Beach Supplies"
     slug = "beach-supplies"
     chineseName = "沙滩用品"
