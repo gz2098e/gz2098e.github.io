@@ -3,24 +3,24 @@ title: "TA-004 Polyester Sleep Eye Mask Flat Contoured Assorted Wholesale"
 slug: "ta-004-sleep-eye-mask-flat-contoured-assorted-wholesale"
 description: "Factory wholesale sleep eye masks with flat and contoured 3D styles, polyester/satin silk fabric assorted colors and prints, portable lightweight eye shades for travel and daily rest."
 sku: "TA-004"
-chineseName: "聚酯纤维睡眠眼罩平面立体混装"
+chineseName: "Polyester Sleep Eye Mask Flat Contoured Assorted"
 category: "related-categories"
 subcategory: "travel-accessories"
 tags: ["sleep eye mask","travel eye mask","3D eye mask","contoured eye shade","blackout sleep mask","satin eye mask","elastic eye mask","eye mask wholesale"]
 images:
   - "https://img.goouto.com/file/1792561775126_1021-3.jpg"
 specs:
-  productType: "睡眠眼罩"
+  productType: "Sleep Eye Mask"
   material: "Polyester/Satin Silk Fabric + Elastic Band + PP Cotton Padding"
   colors: ["Black", "Grey", "Pink", "Blue", "Assorted Prints"]
   sizes: ["Standard Adult 18-20cm Width"]
   weight: "10-30g"
   features:
-    - "平面薄款与3D立体两款设计"
-    - "弹性头带, 佩戴舒适不勒头"
-    - "3D杯型更好遮光且不压眼球"
-    - "轻便便携, 适合差旅携带"
-    - "可爱卡通图案及文字款可选"
+    - "Two designs: flat thin style and 3D contoured style"
+    - "Elastic headband for comfortable pressure-free wear"
+    - "3D cup shape provides better blackout without pressing on eyeballs"
+    - "Lightweight and portable — great for travel"
+    - "Cute cartoon patterns and text-print styles available"
   certifications: ["CE", "RoHS", "SGS", "OEKO-TEX"]
 trade:
   moq: 500
@@ -39,34 +39,34 @@ packing:
   grossWeight: "15kg"
   netWeight: "13kg"
 sellingPoints:
-  - "平面+3D立体双款式, 满足不同偏好"
-  - "超轻量设计, 旅行便携无负担"
-  - "优质聚酯缎面面料, 触感丝滑"
-  - "3D立体杯型不压眼球, 遮光更好"
-  - "卡通图案及趣味文字款丰富SKU"
-  - "超高性价比, 适合促销赠品"
-  - "颜色印花可定制, 打造独家款式"
-  - "工厂直供, 大货产能充足"
+  - "Flat + 3D contoured two styles to suit different preferences"
+  - "Ultra-lightweight — hassle-free travel companion"
+  - "Premium polyester satin fabric with silky touch"
+  - "3D contoured cup avoids eye pressure while improving blackout"
+  - "Cartoon patterns and fun text prints enrich SKU variety"
+  - "Excellent value — ideal for promotional giveaways"
+  - "Custom colors and prints to create exclusive styles"
+  - "Factory direct supply with ample mass-production capacity"
 productDescription: |
-  <p>TA-004 睡眠眼罩系列包含平面薄款和3D立体杯型两种设计, 采用聚酯缎面面料搭配柔软PP棉填充, 弹性头带确保佩戴舒适不勒头。平面款轻薄贴身适合安静环境使用, 3D立体杯型更好地阻断光线且不压迫眼球, 适合飞机高铁等嘈杂光强环境。</p>
-  <p>产品提供纯黑、深灰、粉色、蓝色等基础色, 以及印有可爱卡通图案、SLEEP/DREAM趣味文字的创意款式, 混装出货丰富货架陈列。仅10-30g超轻重量, 收纳不占空间, 是旅行配件套装、酒店客用品、促销赠品和电商自发货的理想产品。</p>
+  <p>The TA-004 Sleep Eye Mask series includes two designs — a thin flat style and a 3D contoured cup style — made from polyester satin fabric with soft PP cotton padding and an elastic headband that stays comfortable without constricting. The flat style is lightweight and close-fitting, ideal for quiet environments. The 3D contoured cup blocks light better without pressing on the eyes, making it perfect for bright or noisy settings like airplanes and high-speed trains.</p>
+  <p>Available in basic colors including black, dark grey, pink and blue, plus creative styles with cute cartoon patterns and fun SLEEP/DREAM text prints. Mixed shipments enrich shelf displays. At just 10–30g, it takes up almost no space when stored — an ideal product for travel accessory sets, hotel amenities, promotional giveaways and e-commerce fulfillment.</p>
 applications:
   useCases:
-    - "飞机火车长途差旅睡眠"
-    - "办公室午休小憩"
-    - "酒店客房配套用品"
-    - "家庭卧室遮光助眠"
-    - "SPA水疗按摩配套"
-    - "瑜伽冥想放松辅助"
-    - "学生宿舍遮光休息"
-    - "旅行礼品套装组合"
+    - "Sleep on long-haul flights and train journeys"
+    - "Midday rest in the office"
+    - "Hotel room amenities"
+    - "Bedroom blackout sleep aid"
+    - "SPA and massage accompaniment"
+    - "Yoga and meditation relaxation aid"
+    - "Blackout rest in student dorms"
+    - "Travel gift set component"
   suitableBuyers:
-    - "旅行配件生产商"
-    - "酒店配套供应商"
-    - "睡眠用品批发商"
-    - "SPA会所采购商"
-    - "电商平台卖家"
-    - "促销礼品定制商"
+    - "Travel accessory producers"
+    - "Hotel amenity suppliers"
+    - "Sleep product wholesalers"
+    - "SPA venue procurement"
+    - "E-commerce platform sellers"
+    - "Promotional gift customizers"
   relatedSearchTerms:
     - "sleep eye mask wholesale"
     - "3D contoured eye mask bulk"
@@ -75,12 +75,12 @@ applications:
     - "blackout eye mask OEM"
     - "custom print eye mask manufacturer"
 faqs:
-  - question: "平面款和3D款有什么区别?"
-    answer: "平面款轻薄贴身适合安静环境, 3D立体杯型不压眼球遮光更好, 适合飞机高铁等光线多变场景。"
-  - question: "可以定制专属印花图案吗?"
-    answer: "可以, 支持热转印、丝印、数码印刷多种工艺, 需提供AI矢量图, MOQ 500pcs起。"
-  - question: "眼罩面料会不会过敏?"
-    answer: "使用OEKO-TEX认证面料, 无荧光剂无重金属, 敏感肌肤也可放心使用。"
-  - question: "MOQ 500pcs 可以混装平面和3D款吗?"
-    answer: "可以自由混合款式和颜色比例, 每款最少100pcs起。"
+  - question: "What is the difference between the flat and 3D styles?"
+    answer: "The flat style is lightweight and close-fitting, suited for quiet environments. The 3D contoured cup avoids eye pressure and blocks light better, making it ideal for planes, trains and variable light conditions."
+  - question: "Can I customize exclusive printed patterns?"
+    answer: "Yes. We support heat transfer, screen printing and digital printing. Please provide AI vector artwork. MOQ starts at 500pcs."
+  - question: "Can the eye mask fabric cause allergic reactions?"
+    answer: "We use OEKO-TEX certified fabric — no fluorescent agents and no heavy metals, safe for sensitive skin."
+  - question: "Can the MOQ of 500pcs mix flat and 3D styles?"
+    answer: "Yes, styles and colors can be freely mixed, with a minimum of 100pcs per style."
 ---
